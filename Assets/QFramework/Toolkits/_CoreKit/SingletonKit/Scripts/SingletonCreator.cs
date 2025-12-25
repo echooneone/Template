@@ -125,7 +125,7 @@ namespace QFramework
                 return instance;
 
             //判断当前场景中是否存在T实例
-            instance = UnityEngine.Object.FindObjectOfType(type) as T;
+            instance = UnityEngine.Object.FindAnyObjectByType(type) as T;
             if (instance != null)
             {
                 instance.OnSingletonInit();

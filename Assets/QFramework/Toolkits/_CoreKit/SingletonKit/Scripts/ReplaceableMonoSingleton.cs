@@ -50,7 +50,7 @@ IEnumerator Start()
             {
                 if (mInstance == null)
                 {
-                    mInstance = FindObjectOfType<T>();
+                    mInstance = FindAnyObjectByType<T>();
                     if (mInstance == null)
                     {
                         var obj = new GameObject
@@ -76,7 +76,7 @@ IEnumerator Start()
 
             DontDestroyOnLoad(this.gameObject);
 
-            var check = FindObjectsOfType<T>();
+            var check = FindObjectsByType<T>(FindObjectsSortMode.None);
             foreach (var searched in check)
             {
                 if (searched == this) continue;

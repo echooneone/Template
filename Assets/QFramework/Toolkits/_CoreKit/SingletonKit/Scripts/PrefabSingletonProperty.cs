@@ -30,7 +30,7 @@ namespace QFramework
             {
                 if (mInstance == null)
                 {
-                    mInstance = Object.FindObjectOfType<T>();
+                    mInstance = Object.FindAnyObjectByType<T>();
                     if (!mInstance)
                     {
                         var prefab = PrefabLoader?.Invoke(typeof(T).Name);

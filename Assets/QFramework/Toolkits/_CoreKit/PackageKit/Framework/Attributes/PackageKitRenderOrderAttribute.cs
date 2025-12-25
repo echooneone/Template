@@ -48,30 +48,6 @@ namespace QFramework
                     Order = 110;
                     break;
             }
-
-            return;
-            // 在 packagekitconfig.json 里配置
-            if (packageName == "Guideline")
-            {
-                Order = -1;
-            }
-            if (packageName == "ResKit")
-            {
-                Order = 4;
-            }
-            if (packageName == "UIKit")
-            {
-                Order = 5;
-            }
-            if (packageName == "LocaleKit")
-            {
-                Order = 6;
-            }
-
-            if (packageName == "UIKitCreateService")
-            {
-                Order = 7;
-            }
         }
     }
 }

@@ -48,7 +48,7 @@ IEnumerator Start()
             get
             {
                 if (mInstance) return mInstance;
-                mInstance = FindObjectOfType<T>();
+                mInstance = FindAnyObjectByType<T>();
                 if (mInstance) return mInstance;
                 var obj = new GameObject();
                 mInstance = obj.AddComponent<T>();
