@@ -58,9 +58,31 @@ public class ProjectSetupTool
             {
                 Directory.CreateDirectory(path);
             }
+
+            RemoveGitKeep(Path.Combine(path, ".gitkeep"));
+        }
+
+        string gameRoot = Path.Combine(Application.dataPath, root);
+        foreach (string gitKeepPath in Directory.EnumerateFiles(gameRoot, ".gitkeep", SearchOption.AllDirectories))
+        {
+            RemoveGitKeep(gitKeepPath);
         }
 
         AssetDatabase.Refresh();
-        Debug.Log("项目目录结构已生成！保持清晰，保持高效。");
+        Debug.Log("项目目录结构已生成，.gitkeep 占位文件已清理！保持清晰，保持高效。");
+    }
+
+    private static void RemoveGitKeep(string path)
+    {
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+        }
+
+        string metaPath = path + ".meta";
+        if (File.Exists(metaPath))
+        {
+            File.Delete(metaPath);
+        }
     }
 }
