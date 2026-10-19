@@ -110,7 +110,9 @@ Assets/
 
 1. **克隆 / 下载**本仓库，使用 **Unity 6000.3.26f1** 打开项目。
 2. 首次打开时 Unity 会自动导入资源，等待编译完成。
-3. 执行菜单 `Tools → Setup Project Folders`，补齐项目目录并清理 `.gitkeep` 占位文件。
+3. 开始实际开发时，可执行菜单 `Tools → Setup Project Folders`，补齐项目目录，并递归清理 `Assets/` 下所有 `.gitkeep` 及对应的 `.meta` 文件。
 4. 打开 `Assets/_Game/Scenes/` 下的场景开始开发。
 5. 新脚本建议放置于 `Assets/_Game/Scripts/` 对应分类目录下。
 6. 如需使用 **DOTween**，首次使用前请执行菜单：`Tools → Demigiant → DOTween Utility Panel → Setup DOTween…`
+
+模板中的空目录通过 `.gitkeep` 保留在 Git 中，确保克隆后目录与对应的 `.meta` 同时存在，避免首次导入时出现目录缺失警告。
